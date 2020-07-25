@@ -27,7 +27,10 @@ def gen(camera):
 #     display = VideoDisplay(camera)
 
     while camera.more():
-        if camera.size() < 50:
+        if camera.size() < 60 && camera.size() > 30:
+            time.sleep(0.05)
+        
+        if camera.size() < 30:
             time.sleep(0.05)
             
         fr = camera.get_frame()

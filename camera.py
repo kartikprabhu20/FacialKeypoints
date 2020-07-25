@@ -39,7 +39,6 @@ class VideoCamera(object):
         count = 0
         while True:
             count +=1
-            print("updating")
             
             if count%3==0:
                 self.Q.put(fr)
@@ -88,8 +87,6 @@ class VideoCamera(object):
         self.video.release()
         
     def more(self):
-        print("size:")
-        print( self.Q.qsize())
 		# return True if there are still frames in the queue
         return self.Q.qsize()>0
     
