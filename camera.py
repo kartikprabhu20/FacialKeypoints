@@ -42,6 +42,7 @@ class VideoCamera(object):
             print("updating")
             
             if count%3==0:
+                self.Q.put(fr)
                 continue
                 
             if self.stopped:
@@ -92,7 +93,7 @@ class VideoCamera(object):
 		# return True if there are still frames in the queue
         return self.Q.qsize()>0
     
-    def qsize(self):
+    def size(self):
 		# return True if there are still frames in the queue
         return self.Q.qsize()
     
